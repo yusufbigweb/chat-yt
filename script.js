@@ -7,9 +7,9 @@ const historyElement = document.querySelector('.history')
 const buttonElement = document.querySelector('button')
 const mViwePort = document.getElementsByClassName('m-v')
 
-function changeInput(value){
-    const inputElement = document.querySelector('input')
-    inputElement.value=value;
+function changeInput(value) {
+  const inputElement = document.querySelector('input')
+  inputElement.value = value;
 
 }
 
@@ -41,11 +41,11 @@ async function getMassage() {
     const response = await fetch("https://api.openai.com/v1/chat/completions", options);
     const data = await response.json();
     outputOfElement.textContent = data.choices[0].message.content
-    if(data.choices[0].message.content && inputElement.value){
-        const pElement = document.createElement('p')
-        pElement.textContent= inputElement.value
-        pElement.addEventListener('click', ()=> changeInput(pElement.textContent))
-        historyElement.append(pElement)
+    if (data.choices[0].message.content && inputElement.value) {
+      const pElement = document.createElement('p')
+      pElement.textContent = inputElement.value
+      pElement.addEventListener('click', () => changeInput(pElement.textContent))
+      historyElement.append(pElement)
     }
     console.log(data);
   } catch (error) {
@@ -55,13 +55,13 @@ async function getMassage() {
 
 submitBtn.addEventListener("click", getMassage);
 
-function clearInput(){
-    inputElement.value="";
+function clearInput() {
+  inputElement.value = "";
 }
 
 
-function clearMoblieView(){
-    inputElement.value =''
+function clearMoblieView() {
+  inputElement.value = ''
 }
 buttonElement.addEventListener('click', clearInput)
 mViwePort.addEventListener('click', clearMoblieView)
