@@ -7,14 +7,11 @@ const historyElement = document.querySelector('.history')
 const buttonElement = document.querySelector('button')
 const mViwePort = document.getElementsByClassName('m-v')
 
-
 function changeInput(value){
     const inputElement = document.querySelector('input')
     inputElement.value=value;
 
 }
-
-
 async function getMassage() {
   console.log("Hi");
 
