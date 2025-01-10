@@ -12,6 +12,7 @@ function changeInput(value){
     inputElement.value=value;
 
 }
+
 async function getMassage() {
   console.log("Hi");
 
